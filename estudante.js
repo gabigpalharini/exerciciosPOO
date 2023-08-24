@@ -12,7 +12,7 @@ class Estudante {
             totalnotas = totalnotas + this.notas[i];
         }
         media = totalnotas / this.notas.length;
-        let msgmedia = "Parabéns " + this.nomeestudante + "sua média é " + media + "e você está aprovado";
+        let msgmedia = "Parabéns " + this.nomeestudante + " sua média é " + media + " e você está aprovado";
         if (media < 7) {
             msgmedia = " sua média  é " + media + "e você precisa estudar mais para melhorar seu desempenho";
         }

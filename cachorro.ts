@@ -2,7 +2,6 @@ class Cachorro {
     nome: string;
     raca: string;
     idade: number;
-    genero: string
 
     constructor(nome: string, raca: string, idade: number)
     {

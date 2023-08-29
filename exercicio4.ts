@@ -19,8 +19,9 @@ detalheFuncionario(){
 
 exibirINSSeIr(){
     let valorInss = (this.INSS*this.salarioBruto);
-    let valorIr = (this.Ir*this.salarioBruto);
-    let totaldeimpostos = (valorInss+valorIr);
+    let salarioLiquido = (this.salarioBruto - valorInss);    
+    let valorIr = (this.Ir*salarioLiquido);
+    let totaldeimpostos = (valorIr+valorInss);
      return " O valor do INSS será R$: " +valorInss+ " O valor do Imposto de renda será R$: " +valorIr+ " O total de impostos será R$: " +totaldeimpostos;
 }
 aplicarAumento(porcentual:number){
@@ -35,7 +36,7 @@ console.log(novosalario.exibirINSSeIr());
 console.log("")
 console.log(novosalario.aplicarAumento(10));
 console.log("")
-let salario2 = new Funcionário("gabi, "," psicóloga", 4000);
+let salario2 = new Funcionário("gabi, "," psicóloga, ", 4000);
 console.log(salario2.detalheFuncionario());
 console.log(salario2.exibirINSSeIr());
 console.log("")

@@ -39,8 +39,15 @@ class Loja {
         this.estoque = [];
         this.carrinho = new Carrinhodecompra;
     }
-    adicionarnocarrinho(estoque) {
-        this.estoque.push(estoque);
+    AdicionarProdutosCarrinho(produto) {
+        const produtoEncontrado = this.estoque.find(item => item.nome == produto.nome);
+        if (produtoEncontrado) {
+            this.carrinho.adicionarnocarrinho(produto);
+            return "Produto adicionado ao carrinho de compras";
+        }
+        else {
+            return "Produto não encontrado no estoque";
+        }
     }
     exibirEstoque() {
         if (this.estoque.length > 0) {
@@ -66,13 +73,17 @@ const produtos3 = new Produtoloja("tennis Vans", 550);
 const produtos4 = new Produtoloja("moletom", 157);
 const meuProduto = new Carrinhodecompra();
 const loja = new Loja();
-meuProduto.adicionarnocarrinho(produtos1);
-meuProduto.adicionarnocarrinho(produtos2);
-meuProduto.adicionarnocarrinho(produtos3);
-meuProduto.adicionarnocarrinho(produtos4);
 console.log(meuProduto.exibirCarrinho());
 console.log(meuProduto.SomaDosProdutos());
 console.log(loja.adicionarnoestoque(produtos1));
 console.log(loja.exibirEstoque());
 console.log(loja.removerEstoque(produtos1));
 console.log(loja.exibirEstoque());
+console.log(loja.adicionarnoestoque(produtos1));
+console.log(loja.adicionarnoestoque(produtos2));
+console.log(loja.adicionarnoestoque(produtos3));
+console.log(loja.adicionarnoestoque(produtos4));
+console.log(loja.AdicionarProdutosCarrinho(produtos1));
+console.log(loja.adicionarProdutosCarrinho(produtos2));
+console.log(loja.adicionarProdutosCarrinho(produtos3));
+console.log(loja.adicionarProdutosCarrinho(produtos4));
